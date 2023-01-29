@@ -5,12 +5,14 @@ export const UserContext = createContext();
 
 export const GlobalProvider = ({children}) => {
     const [news, setNews] = React.useState(null);
+    const [isTrue, setIsTrue] = useState(false);
 
     React.useEffect(() => {
-        axios
-      .get('getallnews')
+      setIsTrue(true)
+      axios.get('getallnews')
       .then((res) => {
         setNews(res.data)
+        setIsTrue(false)
       })
       .catch((error) => {
         console.log(error)
@@ -19,25 +21,33 @@ export const GlobalProvider = ({children}) => {
     }, []);
 
     const getNews = async () => {
-        try {
-            const res = await axios.get('getallnews');
-            setNews(res.data);
-        } catch (error) {
-            console.log(error);
-        }
+      try{
+        const res = await axios.get('getallnews');
+        setNews(res.data);
+      }catch (error) {
+        console.log(error);
+      }
     };
 
     const scrapeNews=()=>{
-        try {
-            const res = axios.post('');
-            // setNews(res.data);
-            console.log("Scrape news res: ", res);
-        } catch (error) {
-            console.log(error);
-        }
+      try {
+        // const res = axios.post('/');
+        // // setNews(res.data);
+        // console.log("Scrape news res: ", res);
+        axios.post('/')
+        .then(function(response){ return response; })
+        .then(function(data) {
+          const items = data;
+          console.log("News Scraped!",items);
+          alert("News Scraped!");
+        })
+      } catch (error) {
+        console.log(error);
+      }
     }
+
   return (
-    <UserContext.Provider value={{news, scrapeNews}}>
+    <UserContext.Provider value={{news, scrapeNews, isTrue}}>
       {children}
     </UserContext.Provider>
   )

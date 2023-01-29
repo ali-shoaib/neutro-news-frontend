@@ -122,7 +122,7 @@ function SearchedNews() {
                     ))}
                 </div>
 
-                <div className="body-div0">
+                {/* <div className="body-div0">
                     <span style={{width:'8px', background:'yellow'}}></span>
                     <h2>
                         PARHLO NEWS
@@ -140,7 +140,7 @@ function SearchedNews() {
                         :
                         null
                     ))}
-                </div>
+                </div> */}
             </div>
         :
         <div style={{textAlign: 'center',fontSize: '20px',color: 'brown',fontWeight: 600}}>No News Found.</div>

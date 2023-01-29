@@ -23,6 +23,7 @@ function Navbar() {
                 searchedNews.push(element);
             }
             navigateToSearchedNews();
+            setText('');
         })
     }
     const navigateToSearchedNews=()=>{
