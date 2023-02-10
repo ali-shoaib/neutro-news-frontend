@@ -37,15 +37,10 @@ body{
 .FUUAST-logo{
   width: 70px;
   height: 80px;
-  /* border: 2px solid black; */
-  margin: auto 20px;
-  float: left;
 }
 .NN-logo {
   width: 330px;
   height: 100px;
-  margin-right: 50px;
-  /* border: 2px solid black; */
 }
 
 .logo-caption{
@@ -124,15 +119,6 @@ nav .hamburger .line{
   border-radius: 3px;
 }
 
-@media screen and (max-width: 785px) {
-  nav li{
-      display: none;
-  }
-  nav .hamburger{
-      display: block;
-  }
-}
-
 .top-trending:hover {
   color: white;
   background-color: rgb(25, 25, 83);
@@ -166,37 +152,16 @@ nav .hamburger .line{
 .set > :nth-child(1), .set > :nth-child(2), .set > :nth-child(3), .set > :nth-child(4){
   margin: 0 10px 0 0;
 }
-/* @media screen and (max-width:495px){
-  .set{
-       
-  }
-} */
-
-.main-slider-div{
-   display: flex;
-   justify-content: center;
-   margin: 15px;
+.cover-image-nn{
+  background-image: url("static/images/cover-image-nn.jpg");
+  width: 100%;
+  min-height: 350px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.main-slider-img{
-   width: 80%;
-   height: 300px;
-}   
-hr{
-  width: 95%;
-  margin-top: 60px;
-}
-/* .body-div0{
-   background-color: black;
-   color: white;
-   text-align: center;
-   font-weight: bold;
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   margin: 0px auto;
-   margin-top: 40px;
-   padding: 10px;
-   width: 23%;
-   letter-spacing: 5px;
-} */
+   
 .body-div0{
   margin: 30px auto 0 auto;
   display: flex;
@@ -368,6 +333,9 @@ p{
   .footer-dark .item:not(.social) {
     text-align:center;
     padding-bottom:20px;
+  }
+  .FUUAST-logo{
+    display: none;
   }
 }
 .footer-dark .item.social {

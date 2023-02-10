@@ -62,25 +62,26 @@ function News({news}) {
         {isTrue ? 
             <div style={{textAlign:'center', marginTop:'30px'}}>
                 <div>
-                    <div class="spinner-grow text-primary" role="status">
+                    <div className="spinner-grow text-primary" role="status">
                     </div>
-                    <div class="spinner-grow text-primary" role="status">
+                    <div className="spinner-grow text-primary" role="status">
                     </div>
-                    <div class="spinner-grow text-primary" role="status">
+                    <div className="spinner-grow text-primary" role="status">
                     </div>
                 </div>
                 <h5>Loading...</h5>
             </div>
         :
         <div>
-            <div style={{background:'grey', height:'1px', margin:'20px 0 20px 0', opacity:0.5}}></div>
-            <div className='d-flex justify-content-between'>
+            <div style={{background:'grey', height:'1px', margin:'15px 0 20px 0', opacity:0}}></div>
+            <div className='d-flex justify-content-between flex-wrap'>
                 <div>
                     <h5 style={{fontWeight:700}}>Latest</h5>
                     {Latest?.map(n => (
                         <Link
                             to="/read-news/{n.id}"
                             state= {{state:n}}
+                            key={n.id}
                         >
                             <div className='d-flex justify-content-around align-items-center mb-2'>
                                 <div><img style={{maxWidth:'150px', maxHeight:'200px'}} src={n.newsImage} id={n.id} /></div>
@@ -95,6 +96,7 @@ function News({news}) {
                         <Link
                             to="/read-news/{n.id}"
                             state= {{state:n}}
+                            key={n.id}
                         >
                             <div className='d-flex justify-content-around align-items-center mb-2'>
                                 <div><img style={{maxWidth:'150px', maxHeight:'200px'}} src={n.newsImage} id={n.id} /></div>
@@ -109,6 +111,7 @@ function News({news}) {
                         <Link
                             to="/read-news/{n.id}"
                             state= {{state:n}}
+                            key={n.id}
                         >
                             <div className='d-flex justify-content-around align-items-center mb-2'>
                                 <div><img style={{maxWidth:'150px', maxHeight:'200px'}} src={n.newsImage} id={n.id} /></div>
@@ -148,6 +151,7 @@ function News({news}) {
                     <Link 
                         to="/read-news/{element.id}"
                         state= {{state:element}}
+                        key={element.id}
                     >
                         <div className="body-div1" key={element.id}>
                             <div className="pic1">
@@ -174,6 +178,7 @@ function News({news}) {
                     <Link 
                         to="/read-news/{element.id}"
                         state= {{state:element}}
+                        key={element.id}
                     >
                         <div className="body-div1" key={element.id}>
                             <div className="pic1">
@@ -199,6 +204,7 @@ function News({news}) {
                     <Link 
                         to="/read-news/{element.id}"
                         state= {{state:element}}
+                        key={element.id}
                     >
                         <div className="body-div1" key={element.id}>
                             <div className="pic1">
@@ -225,6 +231,7 @@ function News({news}) {
                     <Link 
                         to="/read-news/{element.id}"
                         state= {{state:element}}
+                        key={element.id}
                     >
                         <div className="body-div1" key={element.id}>
                             <div className="pic1">
@@ -250,6 +257,7 @@ function News({news}) {
                     <Link 
                         to="/read-news/{element.id}"
                         state= {{state:element}}
+                        key={element.id}
                     >
                         <div className="body-div1" key={element.id}>
                             <div className="pic1">

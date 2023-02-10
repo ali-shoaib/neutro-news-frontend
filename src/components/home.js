@@ -1,6 +1,7 @@
 import React,{useContext, useEffect} from 'react';
 import News from './news';
 import {UserContext} from '../api/context';
+import coverimg from '../static/images/cover-image-nn.jpg';
 
 function Home() {
     const {news} = useContext(UserContext)
@@ -9,8 +10,8 @@ function Home() {
     }, [news])
   return (
     <div>
-        <div className="main-slider-div">
-            <img className="main-slider-img" src="../static/images/indepSliderImg.jpg" alt="HappyIndependence Day"/>
+        <div className="cover-image-nn">
+            {/* <img className='main-slider-img' src={coverimg} alt="cover-image-nn"/> */}
         </div>
         <News news={news}/>
     </div>

@@ -8,22 +8,20 @@ export const GlobalProvider = ({children}) => {
     const [isTrue, setIsTrue] = useState(false);
 
     React.useEffect(() => {
-      setIsTrue(true)
-      axios.get('getallnews')
-      .then((res) => {
-        setNews(res.data)
-        setIsTrue(false)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-        // getNews();
+      getNews();
     }, []);
 
     const getNews = async () => {
       try{
-        const res = await axios.get('getallnews');
-        setNews(res.data);
+        setIsTrue(true);
+        axios.get('getallnews')
+        .then((res) => {
+          setNews(res.data)
+          setIsTrue(false);
+        })
+        .catch((error) => {
+          console.log(error)
+        })
       }catch (error) {
         console.log(error);
       }
@@ -31,15 +29,13 @@ export const GlobalProvider = ({children}) => {
 
     const scrapeNews=()=>{
       try {
-        // const res = axios.post('/');
-        // // setNews(res.data);
-        // console.log("Scrape news res: ", res);
         axios.post('/')
         .then(function(response){ return response; })
         .then(function(data) {
           const items = data;
           console.log("News Scraped!",items);
           alert("News Scraped!");
+          getNews();
         })
       } catch (error) {
         console.log(error);
