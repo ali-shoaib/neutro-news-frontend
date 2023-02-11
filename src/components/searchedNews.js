@@ -23,26 +23,6 @@ function SearchedNews() {
         {searchedNews?.length != 0 ?
             <div>
                 <div className="body-div0">
-                    <span style={{width:'8px', background:'blue'}}></span>
-                    <h2>
-                        SAMAA NEWS
-                    </h2>
-                </div>
-                <div className="headwith-3divs">
-                    {searchedNews?.map(element => (
-                        element.newsUrl.toString().includes('samaaenglish') ?
-                        <div className="body-div1" key={element.id}>
-                            <div className="pic1">
-                                <img src={element.newsImage} id={element.id} />
-                            </div>
-                            <h6 className='title_text'>{element.newsTitle}</h6>
-                        </div>
-                        :
-                        null
-                    ))}
-                </div>
-
-                <div className="body-div0">
                     <span style={{width:'8px', background:'maroon'}}></span>
                     <h2>
                         ARY NEWS
@@ -53,7 +33,13 @@ function SearchedNews() {
                         element.newsUrl.toString().includes('arynews') ?
                         <div className="body-div1" key={element.id}>
                             <div className="pic1">
-                                <img src={element.newsImage} id={element.id} />
+                                <img 
+                                src={element.newsImage} 
+                                id={element.id} 
+                                onError={({ currentTarget }) => {
+                                currentTarget.onerror = null;
+                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                }}/>
                             </div>
                             <h6 className='title_text'>{element.newsTitle}</h6>
                         </div>
@@ -73,7 +59,14 @@ function SearchedNews() {
                         element.newsUrl.toString().includes('geo.tv') ?
                         <div className="body-div1" key={element.id}>
                             <div className="pic1">
-                                <img src={element.newsImage} id={element.id} />
+                                <img 
+                                src={element.newsImage} 
+                                id={element.id} 
+                                onError={({ currentTarget }) => {
+                                currentTarget.onerror = null;
+                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                }}/>
+
                             </div>
                             <h6 className='title_text'>{element.newsTitle}</h6>
                         </div>
@@ -93,7 +86,14 @@ function SearchedNews() {
                         element.newsUrl.toString().includes('express.pk') ?
                         <div className="body-div1" key={element.id}>
                             <div className="pic1">
-                                <img src={element.newsImage} id={element.id} />
+                                <img 
+                                src={element.newsImage} 
+                                id={element.id} 
+                                onError={({ currentTarget }) => {
+                                currentTarget.onerror = null;
+                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                }}/>
+
                             </div>
                             <h6 className='title_text'>{element.newsTitle}</h6>
                         </div>
@@ -113,7 +113,14 @@ function SearchedNews() {
                         element.newsUrl.toString().includes('dunyanews.tv') ?
                         <div className="body-div1" key={element.id}>
                             <div className="pic1">
-                                <img src={element.newsImage} id={element.id} />
+                                <img 
+                                src={element.newsImage} 
+                                id={element.id} 
+                                onError={({ currentTarget }) => {
+                                currentTarget.onerror = null;
+                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                }}/>
+
                             </div>
                             <h6 className='title_text'>{element.newsTitle}</h6>
                         </div>
@@ -122,25 +129,31 @@ function SearchedNews() {
                     ))}
                 </div>
 
-                {/* <div className="body-div0">
-                    <span style={{width:'8px', background:'yellow'}}></span>
+                <div className="body-div0">
+                    <span style={{width:'8px', background:'blue'}}></span>
                     <h2>
-                        PARHLO NEWS
+                        SAMAA NEWS
                     </h2>
-                </div>        
+                </div>
                 <div className="headwith-3divs">
                     {searchedNews?.map(element => (
-                        element.newsUrl.toString().includes('parhlo.com') ?
+                        element.newsUrl.toString().includes('samaaenglish') ?
                         <div className="body-div1" key={element.id}>
                             <div className="pic1">
-                                <img src={element.newsImage} id={element.id} />
+                                <img 
+                                src={element.newsImage} 
+                                id={element.id} 
+                                onError={({ currentTarget }) => {
+                                currentTarget.onerror = null;
+                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                }}/>
                             </div>
                             <h6 className='title_text'>{element.newsTitle}</h6>
                         </div>
                         :
                         null
                     ))}
-                </div> */}
+                </div>
             </div>
         :
         <div style={{textAlign: 'center',fontSize: '20px',color: 'brown',fontWeight: 600}}>No News Found.</div>

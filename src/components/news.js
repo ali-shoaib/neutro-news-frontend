@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import {UserContext} from '../api/context';
+import alternateimage from '../static/images/news-image.jpg'
 
 function News({news}) {
     let filterednews=[];
@@ -79,7 +80,7 @@ function News({news}) {
                     <h5 style={{fontWeight:700}}>Latest</h5>
                     {Latest?.map(n => (
                         <Link
-                            to="/read-news/{n.id}"
+                            to={`/read-news/${n.id}`}
                             state= {{state:n}}
                             key={n.id}
                         >
@@ -94,7 +95,7 @@ function News({news}) {
                     <h5 style={{fontWeight:700}}>Popular</h5>
                     {popular?.map(n => (
                         <Link
-                            to="/read-news/{n.id}"
+                            to={`/read-news/${n.id}`}
                             state= {{state:n}}
                             key={n.id}
                         >
@@ -109,7 +110,7 @@ function News({news}) {
                     <h5 style={{fontWeight:700}}>Trending</h5>
                     {Trending?.map(n => (
                         <Link
-                            to="/read-news/{n.id}"
+                            to={`/read-news/${n.id}`}
                             state= {{state:n}}
                             key={n.id}
                         >
@@ -140,33 +141,6 @@ function News({news}) {
             </div> */}
 
             <div className="body-div0">
-                <span style={{width:'8px', background:'blue'}}></span>
-                <h2>
-                    SAMAA NEWS
-                </h2>
-            </div>
-            <div className="headwith-3divs">
-                {news?.map(element => (
-                    element.newsUrl.toString().includes('samaaenglish') ?
-                    <Link 
-                        to="/read-news/{element.id}"
-                        state= {{state:element}}
-                        key={element.id}
-                    >
-                        <div className="body-div1" key={element.id}>
-                            <div className="pic1">
-                                <img src={element.newsImage} id={element.id} />
-                            </div>
-                            <h6 className='title_text'>{element.newsTitle}</h6>
-                        </div>
-                    </Link>
-                    :
-                    null
-                ))}
-            </div>
-
-
-            <div className="body-div0">
                 <span style={{width:'8px', background:'maroon'}}></span>
                 <h2>
                     ARY NEWS
@@ -176,13 +150,19 @@ function News({news}) {
                 {news?.map(element => (
                     element.newsUrl.toString().includes('arynews') ?
                     <Link 
-                        to="/read-news/{element.id}"
+                        to={`/read-news/${element.id}`}
                         state= {{state:element}}
                         key={element.id}
                     >
                         <div className="body-div1" key={element.id}>
                             <div className="pic1">
-                                <img src={element.newsImage} id={element.id} />
+                                <img 
+                                src={element.newsImage} 
+                                id={element.id} 
+                                onError={({ currentTarget }) => {
+                                currentTarget.onerror = null;
+                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                }}/>
                             </div>
                             <h6 className='title_text'>{element.newsTitle}</h6>
                         </div>
@@ -202,13 +182,20 @@ function News({news}) {
                 {news?.map(element => (
                     element.newsUrl.toString().includes('geo.tv') ?
                     <Link 
-                        to="/read-news/{element.id}"
+                        to={`/read-news/${element.id}`}
                         state= {{state:element}}
                         key={element.id}
                     >
                         <div className="body-div1" key={element.id}>
                             <div className="pic1">
-                                <img src={element.newsImage} id={element.id} />
+                                <img 
+                                src={element.newsImage} 
+                                id={element.id}
+                                onError={({ currentTarget }) => {
+                                currentTarget.onerror = null;
+                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                }}
+                                />
                             </div>
                             <h6 className='title_text'>{element.newsTitle}</h6>
                         </div>
@@ -229,13 +216,20 @@ function News({news}) {
             {news?.map(element => (
                     element.newsUrl.toString().includes('express.pk') ?
                     <Link 
-                        to="/read-news/{element.id}"
+                        to={`/read-news/${element.id}`}
                         state= {{state:element}}
                         key={element.id}
                     >
                         <div className="body-div1" key={element.id}>
                             <div className="pic1">
-                                <img src={element.newsImage} id={element.id} />
+                                <img 
+                                src={element.newsImage} 
+                                id={element.id}
+                                onError={({ currentTarget }) => {
+                                currentTarget.onerror = null;
+                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                }}
+                                />
                             </div>
                             <h6 className='title_text'>{element.newsTitle}</h6>
                         </div>
@@ -255,13 +249,20 @@ function News({news}) {
                 {news?.map(element => (
                     element.newsUrl.toString().includes('dunyanews.tv') ?
                     <Link 
-                        to="/read-news/{element.id}"
+                        to={`/read-news/${element.id}`}
                         state= {{state:element}}
                         key={element.id}
                     >
                         <div className="body-div1" key={element.id}>
                             <div className="pic1">
-                                <img src={element.newsImage} id={element.id} />
+                                <img 
+                                src={element.newsImage} 
+                                id={element.id}
+                                onError={({ currentTarget }) => {
+                                currentTarget.onerror = null;
+                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                }}
+                                />
                             </div>
                             <h6 className='title_text'>{element.newsTitle}</h6>
                         </div>
@@ -271,22 +272,30 @@ function News({news}) {
                 ))}
             </div>
 
-            {/* <div className="body-div0">
-                <span style={{width:'8px', background:'yellow'}}></span>
+            <div className="body-div0">
+                <span style={{width:'8px', background:'blue'}}></span>
                 <h2>
-                    PARHLO NEWS
+                    SAMAA NEWS
                 </h2>
-            </div>        
+            </div>
             <div className="headwith-3divs">
                 {news?.map(element => (
-                    element.newsUrl.toString().includes('parhlo.com') ?
+                    element.newsUrl.toString().includes('samaaenglish') ?
                     <Link 
-                        to="/read-news/{element.id}"
+                        to={`/read-news/${element.id}`}
                         state= {{state:element}}
+                        key={element.id}
                     >
                         <div className="body-div1" key={element.id}>
                             <div className="pic1">
-                                <img src={element.newsImage} id={element.id} />
+                                <img 
+                                src={element.newsImage} 
+                                id={element.id}
+                                onError={({ currentTarget }) => {
+                                currentTarget.onerror = null;
+                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                }}
+                                />
                             </div>
                             <h6 className='title_text'>{element.newsTitle}</h6>
                         </div>
@@ -294,7 +303,7 @@ function News({news}) {
                     :
                     null
                 ))}
-            </div> */}
+            </div>
         </div>
         }
     </div>

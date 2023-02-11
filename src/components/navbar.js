@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import {UserContext} from '../api/context';
 
 function Navbar() {
@@ -70,25 +70,18 @@ function Navbar() {
         </nav> */}
 
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a className="navbar-brand" href="#">Navbar w/ text</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                        <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">Features</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">Pricing</a>
+                        <Link className="nav-link" to={'/'}>Home</Link>
                     </li>
                 </ul>
-                <span className="navbar-text">
+                <span className="navbar-text" style={{marginRight: '10px'}}>
                     <form style={{display: 'flex', alignItems:'center'}} onSubmit={submitSearch}>
-                        <input type="text" name="news" value={text} onChange={e=>setText(e.target.value)} placeholder="Search News.." style={{margin:'0 5px 0 0', padding: '0 0 0 5px', height: '34px', width: '250px'}}/>
+                        <input type="text" name="news" value={text} onChange={e=>setText(e.target.value)} placeholder="Search News.." style={{margin:'0 5px 0 0', padding: '0 0 0 5px', height: '34px', width: '300px'}}/>
                         <button type="submit" style={{background: 'transparent', border: 'none'}} className="btn-submit_news">
                             <img className="search-icon" src="../static/images/search-icon.png" alt="search icon"/>
                         </button>
