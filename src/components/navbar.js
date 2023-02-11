@@ -79,8 +79,8 @@ function Navbar() {
                         <Link className="nav-link" to={'/'}>Home</Link>
                     </li>
                 </ul>
-                <span className="navbar-text" style={{marginRight: '10px'}}>
-                    <form style={{display: 'flex', alignItems:'center'}} onSubmit={submitSearch}>
+                <span>
+                    <form className='d-flex align-items-center mr-3' onSubmit={submitSearch}>
                         <input type="text" name="news" value={text} onChange={e=>setText(e.target.value)} placeholder="Search News.." style={{margin:'0 5px 0 0', padding: '0 0 0 5px', height: '34px', width: '300px'}}/>
                         <button type="submit" style={{background: 'transparent', border: 'none'}} className="btn-submit_news">
                             <img className="search-icon" src="../static/images/search-icon.png" alt="search icon"/>
