@@ -77,7 +77,7 @@ function Navbar() {
                         <Link className="nav-link" to={'/'}>Home</Link>
                     </li>
                     <li>
-                        <button className="btn btn-secondary btn-sm" type="button" onClick={scrapeNews}>
+                        <button className="btn btn-secondary btn-sm" disabled={isScrape ? true : false} type="button" onClick={scrapeNews}>
                             {isScrape ?
                             <span>
                             <span className="spinner-border spinner-border-sm mr-1" role="status" aria-hidden="true"></span>
