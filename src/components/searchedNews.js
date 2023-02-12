@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation, Link } from "react-router-dom";
+import alternateimage from '../static/images/news-image.jpg'
 
 function SearchedNews() {
     const { state } = useLocation();
@@ -37,8 +38,8 @@ function SearchedNews() {
                                 src={element.newsImage} 
                                 id={element.id} 
                                 onError={({ currentTarget }) => {
-                                currentTarget.onerror = null;
-                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                    currentTarget.onerror = null;
+                                    currentTarget.src=alternateimage;
                                 }}/>
                             </div>
                             <h6 className='title_text'>{element.newsTitle}</h6>
@@ -63,8 +64,8 @@ function SearchedNews() {
                                 src={element.newsImage} 
                                 id={element.id} 
                                 onError={({ currentTarget }) => {
-                                currentTarget.onerror = null;
-                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                    currentTarget.onerror = null;
+                                    currentTarget.src=alternateimage;
                                 }}/>
 
                             </div>
@@ -90,8 +91,8 @@ function SearchedNews() {
                                 src={element.newsImage} 
                                 id={element.id} 
                                 onError={({ currentTarget }) => {
-                                currentTarget.onerror = null;
-                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                    currentTarget.onerror = null;
+                                    currentTarget.src=alternateimage;
                                 }}/>
 
                             </div>
@@ -117,8 +118,8 @@ function SearchedNews() {
                                 src={element.newsImage} 
                                 id={element.id} 
                                 onError={({ currentTarget }) => {
-                                currentTarget.onerror = null;
-                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                    currentTarget.onerror = null;
+                                    currentTarget.src=alternateimage;
                                 }}/>
 
                             </div>
@@ -144,8 +145,8 @@ function SearchedNews() {
                                 src={element.newsImage} 
                                 id={element.id} 
                                 onError={({ currentTarget }) => {
-                                currentTarget.onerror = null;
-                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                    currentTarget.onerror = null;
+                                    currentTarget.src=alternateimage;
                                 }}/>
                             </div>
                             <h6 className='title_text'>{element.newsTitle}</h6>

@@ -3,7 +3,7 @@ import { useNavigate,Link } from "react-router-dom";
 import {UserContext} from '../api/context';
 
 function Navbar() {
-    const {news, scrapeNews} = useContext(UserContext)
+    const {news, scrapeNews, isScrape} = useContext(UserContext)
     const [text, setText]=useState('');
     const [searchedNews, setSearchedNews] = useState([]);
     const navigate = useNavigate();
@@ -39,9 +39,7 @@ function Navbar() {
         <div className="top d-flex justify-content-around align-items-center">
             <img className="FUUAST-logo" src="../static/images/federal-urdu-university-logo.png" alt="FUUAST logo" />
             <img className="NN-logo" src="../static/images/NNlogoFinal.png" alt="NeutroNews" />
-            <button onClick={scrapeNews} className="btn_reload" style={{background: 'transparent', border: 'none'}}>
-                <img style={{width: '20px', height: '20px'}} src="../static/images/reload-icon.png" alt="reload-icon"/>
-            </button>  
+            <>.</>
         </div>
     
         {/* <nav>
@@ -74,9 +72,20 @@ function Navbar() {
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarText">
-                <ul className="navbar-nav mr-auto">
+                <ul className="navbar-nav mr-auto nav_initial" style={{alignItems:'center'}}>
                     <li className="nav-item active">
                         <Link className="nav-link" to={'/'}>Home</Link>
+                    </li>
+                    <li>
+                        <button className="btn btn-secondary btn-sm" type="button" onClick={scrapeNews}>
+                            {isScrape ?
+                            <span>
+                            <span className="spinner-border spinner-border-sm mr-1" role="status" aria-hidden="true"></span>
+                            Scraping...
+                            </span>
+                            : <span>Scrape</span>
+                            }
+                        </button>
                     </li>
                 </ul>
                 <span>

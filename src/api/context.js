@@ -6,6 +6,7 @@ export const UserContext = createContext();
 export const GlobalProvider = ({children}) => {
     const [news, setNews] = React.useState(null);
     const [isTrue, setIsTrue] = useState(false);
+    const [isScrape, setIsScrape] = useState(false);
 
     React.useEffect(() => {
       getNews();
@@ -29,11 +30,12 @@ export const GlobalProvider = ({children}) => {
 
     const scrapeNews=()=>{
       try {
+        setIsScrape(true);
         axios.post('/')
         .then(function(response){ return response; })
         .then(function(data) {
-          const items = data;
-          console.log("News Scraped!",items);
+          setIsScrape(false);
+          console.log("News Scraped!",data);
           alert("News Scraped!");
           getNews();
         })
@@ -43,7 +45,7 @@ export const GlobalProvider = ({children}) => {
     }
 
   return (
-    <UserContext.Provider value={{news, scrapeNews, isTrue}}>
+    <UserContext.Provider value={{news, scrapeNews, isTrue, isScrape}}>
       {children}
     </UserContext.Provider>
   )

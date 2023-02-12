@@ -151,7 +151,7 @@ function News({news}) {
                     element.newsUrl.toString().includes('arynews') ?
                     <Link 
                         to={`/read-news/${element.id}`}
-                        state= {{state:element}}
+                        state= {{state:element, courtesy:'ARY News'}}
                         key={element.id}
                     >
                         <div className="body-div1" key={element.id}>
@@ -161,7 +161,7 @@ function News({news}) {
                                 id={element.id} 
                                 onError={({ currentTarget }) => {
                                 currentTarget.onerror = null;
-                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                currentTarget.src=alternateimage;
                                 }}/>
                             </div>
                             <h6 className='title_text'>{element.newsTitle}</h6>
@@ -183,7 +183,7 @@ function News({news}) {
                     element.newsUrl.toString().includes('geo.tv') ?
                     <Link 
                         to={`/read-news/${element.id}`}
-                        state= {{state:element}}
+                        state= {{state:element, courtesy:'Geo News'}}
                         key={element.id}
                     >
                         <div className="body-div1" key={element.id}>
@@ -193,7 +193,7 @@ function News({news}) {
                                 id={element.id}
                                 onError={({ currentTarget }) => {
                                 currentTarget.onerror = null;
-                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                currentTarget.src=alternateimage;
                                 }}
                                 />
                             </div>
@@ -217,7 +217,7 @@ function News({news}) {
                     element.newsUrl.toString().includes('express.pk') ?
                     <Link 
                         to={`/read-news/${element.id}`}
-                        state= {{state:element}}
+                        state= {{state:element, courtesy:'Express News'}}
                         key={element.id}
                     >
                         <div className="body-div1" key={element.id}>
@@ -227,7 +227,7 @@ function News({news}) {
                                 id={element.id}
                                 onError={({ currentTarget }) => {
                                 currentTarget.onerror = null;
-                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                currentTarget.src=alternateimage;
                                 }}
                                 />
                             </div>
@@ -250,7 +250,7 @@ function News({news}) {
                     element.newsUrl.toString().includes('dunyanews.tv') ?
                     <Link 
                         to={`/read-news/${element.id}`}
-                        state= {{state:element}}
+                        state= {{state:element, courtesy:'Dunya News'}}
                         key={element.id}
                     >
                         <div className="body-div1" key={element.id}>
@@ -260,7 +260,7 @@ function News({news}) {
                                 id={element.id}
                                 onError={({ currentTarget }) => {
                                 currentTarget.onerror = null;
-                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                currentTarget.src=alternateimage;
                                 }}
                                 />
                             </div>
@@ -283,7 +283,7 @@ function News({news}) {
                     element.newsUrl.toString().includes('samaaenglish') ?
                     <Link 
                         to={`/read-news/${element.id}`}
-                        state= {{state:element}}
+                        state= {{state:element, courtesy:'Samaa News'}}
                         key={element.id}
                     >
                         <div className="body-div1" key={element.id}>
@@ -293,7 +293,7 @@ function News({news}) {
                                 id={element.id}
                                 onError={({ currentTarget }) => {
                                 currentTarget.onerror = null;
-                                currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+                                currentTarget.src=alternateimage;
                                 }}
                                 />
                             </div>

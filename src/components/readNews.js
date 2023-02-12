@@ -1,9 +1,10 @@
 import React from 'react';
-import {useLocation, Link} from 'react-router-dom'
+import {useLocation, Link} from 'react-router-dom';
+import alternateimage from '../static/images/news-image.jpg'
 
 function ReadNews() {
   const location = useLocation();
-  const {state:{state}} = location;
+  const {state:{state, courtesy}} = location;
 
   const GoTheSource = (url) => {
     window.open(url, '_blank', 'noreferrer');
@@ -30,13 +31,14 @@ function ReadNews() {
         style={{width: '700px', maxWidth: '100%'}}
         alt="newsimage"
         onError={({ currentTarget }) => {
-        currentTarget.onerror = null;
-        currentTarget.src="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg";
+          currentTarget.onerror = null;
+          currentTarget.src=alternateimage;
         }}
         />
       </div>
-      <div className='mt-2'>
+      <div className='mt-2 d-flex justify-content-between align-items-center' style={{width: '700px', maxWidth: '100%'}}>
         <span style={{color:'grey'}}><b>Author:</b> Web Desk</span>
+        {courtesy!=undefined || courtesy!=null ?<span style={{color:'grey'}}><b>Courtesy:</b> {courtesy}</span> : null}
       </div>
       <div className='mt-3' style={{width: '800px', maxWidth: '98%'}}><p>{state?.newsText}</p></div>
     </div>
