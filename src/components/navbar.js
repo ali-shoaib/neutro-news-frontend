@@ -1,16 +1,25 @@
-import React, { useState, useContext } from 'react';
-import { useNavigate,Link } from "react-router-dom";
+import { display } from '@mui/system';
+import React, { useState, useContext, useEffect } from 'react';
+import { useNavigate,Link,useLocation } from "react-router-dom";
 import {UserContext} from '../api/context';
+import AlertMessage from './alertMessage';
 
 function Navbar() {
-    const {news, scrapeNews, isScrape} = useContext(UserContext)
+    const {news, scrapeNews, isScrape, msg} = useContext(UserContext)
     const [text, setText]=useState('');
-    const [searchedNews, setSearchedNews] = useState([]);
+    let searchedNews=[];
     const navigate = useNavigate();
+
+    const location = useLocation();
+    const path = location.pathname;
+    const [display, setDisplay] = useState(false);
+    useEffect(() => {
+        setDisplay(path === "/" ? true : false);
+    },[path])
 
     const submitSearch=(e)=>{
         e.preventDefault();
-        setSearchedNews([]);
+        searchedNews.length=0;
 
         news?.forEach(element => {
             if(element.newsTitle.includes(text.charAt(0).toUpperCase() + text.slice(1))){
@@ -77,15 +86,17 @@ function Navbar() {
                         <Link className="nav-link" to={'/'}>Home</Link>
                     </li>
                     <li>
+                        {display &&
                         <button className="btn btn-secondary btn-sm" disabled={isScrape ? true : false} type="button" onClick={scrapeNews}>
-                            {isScrape ?
-                            <span>
-                            <span className="spinner-border spinner-border-sm mr-1" role="status" aria-hidden="true"></span>
-                            Scraping...
-                            </span>
-                            : <span>Scrape</span>
-                            }
+                        {isScrape ?
+                        <span>
+                        <span className="spinner-border spinner-border-sm mr-1" role="status" aria-hidden="true"></span>
+                        Scraping...
+                        </span>
+                        : <span>Scrape</span>
+                        }
                         </button>
+                        }
                     </li>
                 </ul>
                 <span>
@@ -98,6 +109,7 @@ function Navbar() {
                 </span>
             </div>
         </nav>
+        {msg=="Scraped" ? <AlertMessage /> : null}
     </div>
   )
 }

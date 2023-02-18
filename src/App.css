@@ -154,11 +154,8 @@ nav .hamburger .line{
 }
 .cover-image-nn{
   background-image: url("static/images/cover-image-nn.jpg");
-  width: 100%;
-  min-height: 350px;
-  background-attachment: fixed;
+  height: 500px;
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
 }
    
@@ -460,4 +457,16 @@ height: 100%;
   bottom: 20px;
   width: 97%;
   max-width: 98%;
+}
+.backToTop{
+  position: absolute;
+  right: 45px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  background: steelblue;
+  font-size: 35px;
+  font-weight: 500;
+  color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }

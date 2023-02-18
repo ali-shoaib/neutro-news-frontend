@@ -85,7 +85,16 @@ function News({news}) {
                             key={n.id}
                         >
                             <div className='d-flex justify-content-around align-items-center mb-2'>
-                                <div><img style={{maxWidth:'150px', maxHeight:'200px'}} src={n.newsImage} id={n.id} /></div>
+                                <div>
+                                    <img 
+                                    style={{maxWidth:'150px', maxHeight:'200px'}} 
+                                    src={n.newsImage} id={n.id}
+                                    onError={({ currentTarget }) => {
+                                    currentTarget.onerror = null;
+                                    currentTarget.src=alternateimage;
+                                    }}
+                                    />
+                                </div>
                                 <div style={{width:'200px'}}><h6 style={{fontSize:"14px", margin: '0 0 0 5px'}} className='title_text'>{n.newsTitle}</h6></div>
                             </div>
                         </Link>
@@ -100,7 +109,15 @@ function News({news}) {
                             key={n.id}
                         >
                             <div className='d-flex justify-content-around align-items-center mb-2'>
-                                <div><img style={{maxWidth:'150px', maxHeight:'200px'}} src={n.newsImage} id={n.id} /></div>
+                                <div>
+                                    <img 
+                                    style={{maxWidth:'150px', maxHeight:'200px'}} 
+                                    src={n.newsImage} id={n.id} 
+                                    onError={({ currentTarget }) => {
+                                    currentTarget.onerror = null;
+                                    currentTarget.src=alternateimage;
+                                    }}/>
+                                </div>
                                 <div style={{width:'200px'}}><h6 style={{fontSize:"14px", margin: '0 0 0 5px'}} className='title_text'>{n.newsTitle}</h6></div>
                             </div>
                         </Link>
@@ -115,7 +132,14 @@ function News({news}) {
                             key={n.id}
                         >
                             <div className='d-flex justify-content-around align-items-center mb-2'>
-                                <div><img style={{maxWidth:'150px', maxHeight:'200px'}} src={n.newsImage} id={n.id} /></div>
+                                <div>
+                                    <img style={{maxWidth:'150px', maxHeight:'200px'}} 
+                                    src={n.newsImage} id={n.id} 
+                                    onError={({ currentTarget }) => {
+                                    currentTarget.onerror = null;
+                                    currentTarget.src=alternateimage;
+                                    }}/>
+                                </div>
                                 <div style={{width:'200px'}}><h6 style={{fontSize:"14px", margin: '0 0 0 5px'}} className='title_text'>{n.newsTitle}</h6></div>
                             </div>
                         </Link>
@@ -209,15 +233,15 @@ function News({news}) {
             <div className="body-div0">
                 <span style={{width:'8px', background:'red'}}></span>
                 <h2>
-                    EXPRESS NEWS
+                    EXPRESS TRIBUNE
                 </h2>
             </div>
             <div className="headwith-3divs">
             {news?.map(element => (
-                    element.newsUrl.toString().includes('express.pk') ?
+                    element.newsUrl.toString().includes('tribune.com.pk') ?
                     <Link 
                         to={`/read-news/${element.id}`}
-                        state= {{state:element, courtesy:'Express News'}}
+                        state= {{state:element, courtesy:'Express Tribune'}}
                         key={element.id}
                     >
                         <div className="body-div1" key={element.id}>

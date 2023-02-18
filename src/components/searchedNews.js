@@ -32,18 +32,24 @@ function SearchedNews() {
                 <div className="headwith-3divs">
                     {searchedNews?.map(element => (
                         element.newsUrl.toString().includes('arynews') ?
-                        <div className="body-div1" key={element.id}>
-                            <div className="pic1">
-                                <img 
-                                src={element.newsImage} 
-                                id={element.id} 
-                                onError={({ currentTarget }) => {
-                                    currentTarget.onerror = null;
-                                    currentTarget.src=alternateimage;
-                                }}/>
+                        <Link
+                        to={`/read-news/${element.id}`}
+                        state= {{state:element, courtesy:'ARY News'}}
+                        key={element.id}
+                        >
+                            <div className="body-div1" key={element.id}>
+                                <div className="pic1">
+                                    <img 
+                                    src={element.newsImage} 
+                                    id={element.id} 
+                                    onError={({ currentTarget }) => {
+                                        currentTarget.onerror = null;
+                                        currentTarget.src=alternateimage;
+                                    }}/>
+                                </div>
+                                <h6 className='title_text'>{element.newsTitle}</h6>
                             </div>
-                            <h6 className='title_text'>{element.newsTitle}</h6>
-                        </div>
+                        </Link>
                         :
                         null
                     ))}
@@ -58,19 +64,25 @@ function SearchedNews() {
                 <div className="headwith-3divs">
                     {searchedNews?.map(element => (
                         element.newsUrl.toString().includes('geo.tv') ?
-                        <div className="body-div1" key={element.id}>
-                            <div className="pic1">
-                                <img 
-                                src={element.newsImage} 
-                                id={element.id} 
-                                onError={({ currentTarget }) => {
-                                    currentTarget.onerror = null;
-                                    currentTarget.src=alternateimage;
-                                }}/>
+                        <Link
+                        to={`/read-news/${element.id}`}
+                        state= {{state:element, courtesy:'Geo News'}}
+                        key={element.id}
+                        >
+                            <div className="body-div1" key={element.id}>
+                                <div className="pic1">
+                                    <img 
+                                    src={element.newsImage} 
+                                    id={element.id} 
+                                    onError={({ currentTarget }) => {
+                                        currentTarget.onerror = null;
+                                        currentTarget.src=alternateimage;
+                                    }}/>
 
+                                </div>
+                                <h6 className='title_text'>{element.newsTitle}</h6>
                             </div>
-                            <h6 className='title_text'>{element.newsTitle}</h6>
-                        </div>
+                        </Link>
                         :
                         null
                     ))}
@@ -79,13 +91,18 @@ function SearchedNews() {
                 <div className="body-div0">
                     <span style={{width:'8px', background:'red'}}></span>
                     <h2>
-                        EXPRESS NEWS
+                        EXPRESS TRIBUNE
                     </h2>
                 </div>        
                 <div className="headwith-3divs">
                 {searchedNews?.map(element => (
-                        element.newsUrl.toString().includes('express.pk') ?
-                        <div className="body-div1" key={element.id}>
+                        element.newsUrl.toString().includes('tribune.com.pk') ?
+                        <Link
+                        to={`/read-news/${element.id}`}
+                        state= {{state:element, courtesy:'Express Tribune'}}
+                        key={element.id}
+                        >
+                            <div className="body-div1" key={element.id}>
                             <div className="pic1">
                                 <img 
                                 src={element.newsImage} 
@@ -98,6 +115,8 @@ function SearchedNews() {
                             </div>
                             <h6 className='title_text'>{element.newsTitle}</h6>
                         </div>
+
+                        </Link>
                         :
                         null
                 ))}
@@ -112,19 +131,25 @@ function SearchedNews() {
                 <div className="headwith-3divs">
                     {searchedNews?.map(element => (
                         element.newsUrl.toString().includes('dunyanews.tv') ?
-                        <div className="body-div1" key={element.id}>
-                            <div className="pic1">
-                                <img 
-                                src={element.newsImage} 
-                                id={element.id} 
-                                onError={({ currentTarget }) => {
-                                    currentTarget.onerror = null;
-                                    currentTarget.src=alternateimage;
-                                }}/>
+                        <Link
+                        to={`/read-news/${element.id}`}
+                        state= {{state:element, courtesy:'Dunya News'}}
+                        key={element.id}
+                        >
+                            <div className="body-div1" key={element.id}>
+                                <div className="pic1">
+                                    <img 
+                                    src={element.newsImage} 
+                                    id={element.id} 
+                                    onError={({ currentTarget }) => {
+                                        currentTarget.onerror = null;
+                                        currentTarget.src=alternateimage;
+                                    }}/>
 
+                                </div>
+                                <h6 className='title_text'>{element.newsTitle}</h6>
                             </div>
-                            <h6 className='title_text'>{element.newsTitle}</h6>
-                        </div>
+                        </Link>
                         :
                         null
                     ))}
@@ -139,18 +164,24 @@ function SearchedNews() {
                 <div className="headwith-3divs">
                     {searchedNews?.map(element => (
                         element.newsUrl.toString().includes('samaaenglish') ?
-                        <div className="body-div1" key={element.id}>
-                            <div className="pic1">
-                                <img 
-                                src={element.newsImage} 
-                                id={element.id} 
-                                onError={({ currentTarget }) => {
-                                    currentTarget.onerror = null;
-                                    currentTarget.src=alternateimage;
-                                }}/>
+                        <Link
+                        to={`/read-news/${element.id}`}
+                        state= {{state:element, courtesy:'Samaa News'}}
+                        key={element.id}
+                        >
+                            <div className="body-div1" key={element.id}>
+                                <div className="pic1">
+                                    <img 
+                                    src={element.newsImage} 
+                                    id={element.id} 
+                                    onError={({ currentTarget }) => {
+                                        currentTarget.onerror = null;
+                                        currentTarget.src=alternateimage;
+                                    }}/>
+                                </div>
+                                <h6 className='title_text'>{element.newsTitle}</h6>
                             </div>
-                            <h6 className='title_text'>{element.newsTitle}</h6>
-                        </div>
+                        </Link>
                         :
                         null
                     ))}

@@ -7,9 +7,16 @@ export const GlobalProvider = ({children}) => {
     const [news, setNews] = React.useState(null);
     const [isTrue, setIsTrue] = useState(false);
     const [isScrape, setIsScrape] = useState(false);
+    const [msg,setMsg] = useState('');
 
     React.useEffect(() => {
       getNews();
+      // scrapeNews();
+      const interval = setInterval(() => {
+        scrapeNews();
+      }, 36000000);
+    
+      return () => clearInterval(interval);
     }, []);
 
     const getNews = async () => {
@@ -31,21 +38,23 @@ export const GlobalProvider = ({children}) => {
     const scrapeNews=()=>{
       try {
         setIsScrape(true);
+        setMsg('');
         axios.post('/')
         .then(function(response){ return response; })
         .then(function(data) {
           setIsScrape(false);
           console.log("News Scraped!",data);
-          alert("News Scraped!");
+          setMsg("Scraped");
           getNews();
         })
       } catch (error) {
+        setIsScrape(false);
         console.log(error);
       }
     }
 
   return (
-    <UserContext.Provider value={{news, scrapeNews, isTrue, isScrape}}>
+    <UserContext.Provider value={{news, scrapeNews, isTrue, isScrape, msg}}>
       {children}
     </UserContext.Provider>
   )
