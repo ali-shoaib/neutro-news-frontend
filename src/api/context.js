@@ -44,7 +44,7 @@ export const GlobalProvider = ({children}) => {
         .then(function(data) {
           setIsScrape(false);
           console.log("News Scraped!",data);
-          setMsg("Scraped");
+          setMsg("DataScraped");
           getNews();
         })
       } catch (error) {

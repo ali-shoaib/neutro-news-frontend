@@ -15,14 +15,10 @@ function App() {
   return (
     <div>
       <Routes>
-        {/* <Route path='/' element={<Dashboard />}/>
-        <Route path='project/:id' element={<ProjectDetails />} />
-        <Route path="signin" element={<SignIn />}/>
-        <Route path="signup" element={<SignUp />}/> */}
         <Route path="/" element={<Home />}/>
         <Route path="/searched-news" element={<SearchedNews />}/>
         <Route path="/read-news/:id" element={<ReadNews />}/>
-        <Route path="/msg" element={<AlertMessage />}/>
+        {/* <Route path="/msg" element={<AlertMessage />}/> */}
       </Routes>
       <GoTop />
     </div>

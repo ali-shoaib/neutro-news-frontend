@@ -13,7 +13,7 @@ function AlertMessage() {
   return (
     <div>
         {open ?
-        <Alert variant="filled" severity="success" style={{width: '230px',position: 'fixed',right: '30px', bottom: '50px'}}>
+        <Alert variant="filled" severity="success" className='alertMsg'>
             News Scraped!
         </Alert>:
         null
