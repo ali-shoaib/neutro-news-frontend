@@ -87,7 +87,7 @@ function News({news}) {
                             <div className='d-flex justify-content-around align-items-center mb-2'>
                                 <div>
                                     <img 
-                                    style={{maxWidth:'150px', maxHeight:'200px'}} 
+                                    style={{width:'170px', height:'120px'}}
                                     src={n.newsImage} id={n.id}
                                     onError={({ currentTarget }) => {
                                     currentTarget.onerror = null;
@@ -111,7 +111,7 @@ function News({news}) {
                             <div className='d-flex justify-content-around align-items-center mb-2'>
                                 <div>
                                     <img 
-                                    style={{maxWidth:'150px', maxHeight:'200px'}} 
+                                    style={{width:'170px', height:'120px'}}
                                     src={n.newsImage} id={n.id} 
                                     onError={({ currentTarget }) => {
                                     currentTarget.onerror = null;
@@ -133,7 +133,7 @@ function News({news}) {
                         >
                             <div className='d-flex justify-content-around align-items-center mb-2'>
                                 <div>
-                                    <img style={{maxWidth:'150px', maxHeight:'200px'}} 
+                                    <img style={{width:'170px', height:'120px'}}
                                     src={n.newsImage} id={n.id} 
                                     onError={({ currentTarget }) => {
                                     currentTarget.onerror = null;

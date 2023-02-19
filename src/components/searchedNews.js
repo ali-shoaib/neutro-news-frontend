@@ -21,7 +21,7 @@ function SearchedNews() {
             </div>
         </div>
 
-        {searchedNews?.length != 0 ?
+        {searchedNews?.length !== 0 ?
             <div>
                 <div className="body-div0">
                     <span style={{width:'8px', background:'maroon'}}></span>

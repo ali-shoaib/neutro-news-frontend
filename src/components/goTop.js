@@ -1,26 +1,32 @@
 import React from 'react';
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 
 const GoTop = () => {
-    const [showButton, setShowButton] = React.useState(false);
-    useEffect(() => {
-        const handleScrollButtonVisibility = () => {
-            window.pageYOffset > 300 ? setShowButton(true) : setShowButton(false);
-        }
-        window.addEventListener('scroll',handleScrollButtonVisibility);
-        return() => {
-            window.removeEventListener('scroll',handleScrollButtonVisibility)
-        }
-    },[]);
-    
-    const handleScrollToTop =()=>{
-        window.scrollTo({top: 0, behavior:'smooth'})
+    const [visible, setVisible] = useState(false)
+  
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 400){
+      setVisible(true)
+    } 
+    else if (scrolled <= 400){
+      setVisible(false)
     }
+  };
+  
+  const scrollToTop = () =>{
+    window.scrollTo({
+      top: 0, 
+      behavior: 'smooth'
+    });
+  };
+  
+  window.addEventListener('scroll', toggleVisible);
     return (
       <>
         <div>
-        {showButton && (
-            <button onClick={handleScrollToTop} className="backToTop">
+        {visible && (
+            <button onClick={scrollToTop} className="backToTop">
                 ^
             </button>
         )}

@@ -38,7 +38,7 @@ function ReadNews() {
       </div>
       <div className='mt-2 d-flex justify-content-between align-items-center' style={{width: '700px', maxWidth: '100%'}}>
         <span style={{color:'grey'}}><span style={{fontWeight:500}}>Author:</span> Web Desk</span>
-        {courtesy!=undefined || courtesy!=null ?<span style={{color:'grey'}}><span style={{fontWeight:500}}>Courtesy:</span> {courtesy}</span> : null}
+        {courtesy!==undefined && courtesy!==null ?<span style={{color:'grey'}}><span style={{fontWeight:500}}>Courtesy:</span> {courtesy}</span> : null}
       </div>
       <div className='mt-3' style={{width: '800px', maxWidth: '98%'}}><p>{state?.newsText}</p></div>
     </div>

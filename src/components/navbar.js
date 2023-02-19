@@ -108,7 +108,7 @@ function Navbar() {
                 </span>
             </div>
         </nav>
-        {msg=="DataScraped" ? <AlertMessage /> : null}
+        {msg==="DataScraped" ? <AlertMessage /> : null}
     </div>
   )
 }
